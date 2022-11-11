@@ -6,11 +6,11 @@ import (
 )
 
 func main() {
-	valor, err := sum(50, 10)
+	value, err := sum(50, 10)
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(valor)
+	fmt.Println(value)
 
 }
 
