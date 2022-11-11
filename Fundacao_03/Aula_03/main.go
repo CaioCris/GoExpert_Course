@@ -2,20 +2,16 @@ package main
 
 const a = "Hello, World!"
 
+type ID int 
+
 var (
 	b bool = true
 	c int
 	d string
 	e float64
+	f ID = 10
 )
 
 func main() {
-	a := "primeira atribuição tem :" //string
-	a = "reatribuir a var, não precisa dos :"
-	println(a)
-	println(b)
-}
-
-func x() {
-
+	println(f)
 }
