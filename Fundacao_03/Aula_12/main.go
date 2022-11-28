@@ -2,10 +2,18 @@ package main
 
 import "fmt"
 
+type Endereco struct {
+	Logradouro string
+	Numero int
+	Cidade string
+	Estado string
+}
+
 type Client struct {
 	name     string
 	age      int
 	isActive bool
+	Endereco Endereco
 }
 
 func main() {
@@ -14,6 +22,7 @@ func main() {
 		age:      29,
 		isActive: true,
 	}
+	client.Endereco.Cidade = "São Paulo"
 
 	fmt.Println(client.name)
 	fmt.Println(client.isActive)
