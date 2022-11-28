@@ -44,7 +44,5 @@ func main() {
 		age:      29,
 		isActive: true,
 	}
-	myCompany := Company{}
-
 	Deactivation(client)
 }
