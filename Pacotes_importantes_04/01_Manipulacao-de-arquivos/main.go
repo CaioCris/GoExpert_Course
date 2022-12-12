@@ -29,7 +29,7 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("Conteudo dentro de arquivo.txt: %v", string(file))
+	fmt.Printf("Conteudo dentro de arquivo.txt: %v\n", string(file))
 
 	/// Leitura parte por parte (para menor uso de memoria)
 	fmt.Println("-- Leitura parte por parte  --")
@@ -39,13 +39,18 @@ func main() {
 	}
 
 	reader := bufio.NewReader(fileOpen)
-	buffer := make([]byte, 10)
+	buffer := make([]byte, 11)
 	for {
 		size, err := reader.Read(buffer)
 		if err != nil {
 			break
 		}
 		fmt.Println(string(buffer[:size]))
+	}
+
+	err = os.Remove("arquivo.txt")
+	if err != nil {
+		panic(err)
 	}
 
 }
