@@ -5,10 +5,21 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", SearchCEP)
+	http.HandleFunc("/", SearchCEPHandler)
 	http.ListenAndServe(":8080", nil)
 }
 
-func SearchCEP(w http.ResponseWriter, r *http.Request) {
+func SearchCEPHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+	cepParam := r.URL.Query().Get("cep")
+	if cepParam == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("Hello, world!"))
 }
