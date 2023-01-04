@@ -13,7 +13,7 @@ type Account struct {
 func main() {
 	account := Account{Number: 1, Balance: 100}
 	// Marshal guarda o valor em uma variavel
-	res, err := json.Marshal((account))
+	res, err := json.Marshal(account)
 	if err != nil {
 		println(err)
 	}
