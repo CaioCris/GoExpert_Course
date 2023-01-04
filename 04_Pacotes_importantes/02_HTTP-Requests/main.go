@@ -18,6 +18,9 @@ func main() {
 		panic(err)
 	}
 	fmt.Println(string(res))
-	req.Body.Close()
+	err = req.Body.Close()
+	if err != nil {
+		panic(err)
+	}
 
 }

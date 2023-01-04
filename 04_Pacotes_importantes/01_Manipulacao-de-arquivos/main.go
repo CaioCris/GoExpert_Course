@@ -20,7 +20,10 @@ func main() {
 		panic(err)
 	}
 	fmt.Printf("Arquivo criado com sucesso! tamanho: %d bytes\n", size)
-	f.Close()
+	err = f.Close()
+	if err != nil {
+		panic(err)
+	}
 
 	/// Leitura de arquivo
 	fmt.Println("-- Leitura de arquivo --")

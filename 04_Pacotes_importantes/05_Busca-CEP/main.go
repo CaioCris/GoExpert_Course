@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-type ViaCEP struct {
+type viaCEP struct {
 	Cep         string `json:"cep"`
 	Logradouro  string `json:"logradouro"`
 	Complemento string `json:"complemento"`
@@ -35,7 +35,7 @@ func main() {
 			fmt.Fprintf(os.Stderr, "Erro ao ler resposta: %v\n", err)
 		}
 
-		var data ViaCEP
+		var data viaCEP
 		err = json.Unmarshal(res, &data)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Erro ao fazer parse da resposta: %v\n", err)
